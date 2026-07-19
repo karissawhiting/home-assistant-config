@@ -1,0 +1,25 @@
+# Whitelist approach: ignore everything, then allow specific files
+/*
+!.gitignore
+
+# Core config
+!configuration.yaml
+!automations.yaml
+!scripts.yaml
+!scenes.yaml
+!secrets.yaml.example
+
+# Directories to track (contents filtered below)
+!themes/
+!blueprints/
+!packages/
+!esphome/
+!custom_templates/
+
+# Inside allowed dirs, keep only text config
+themes/**
+!themes/**/
+!themes/**/*.yaml
+blueprints/**
+!blueprints/**/
+!blueprints/**/*.yaml
