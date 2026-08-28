@@ -8,7 +8,13 @@ views:
     badges: []
     sections:
       - type: grid
-        cards: !include cards/lights_control/bedroom_kitchen.yaml
+        cards: !include cards/lights_control/bedroom.yaml
+        column_span: 1
+        background:
+          opacity: 60
+        theme: Google Dark Theme
+      - type: grid
+        cards: !include cards/lights_control/kitchen.yaml
         column_span: 1
         background:
           opacity: 60
