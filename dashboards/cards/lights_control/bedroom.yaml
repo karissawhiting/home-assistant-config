@@ -145,6 +145,11 @@
       justify-content: space-between !important;
       width: 100% !important;
     }
+
+    .globe-lamp,
+    .bedroom-lamp {
+      --bubble-sub-slider-background-color: rgba(30, 30, 30, 1) !important;
+    }
 - type: heading
   icon: none
   heading_style: title
