@@ -110,7 +110,7 @@
             allow_light_slider_to_0: true
             hold_action:
               action: more-info
-            name: Shelf Lamp
+            name: Kitchen Shelf Lamp
           - entity: light.kitchen_shelf_lamp
             icon: mdi:palette
             fill_width: false
