@@ -9,6 +9,9 @@
 !scenes.yaml
 !secrets.yaml.example
 
+# Dashboards 
+!dashboards/*
+
 # Directories to track (contents filtered below)
 !themes/
 !blueprints/
@@ -23,3 +26,4 @@ themes/**
 blueprints/**
 !blueprints/**/
 !blueprints/**/*.yaml
+
