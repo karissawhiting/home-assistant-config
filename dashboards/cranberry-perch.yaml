@@ -9,9 +9,9 @@ views:
     sections:
       - type: grid
         cards:
-          - type: grid
+          - type: vertical-stack
             cards: !include cards/lights_control/bedroom.yaml
-          - type: grid
+          - type: vertical-stack
             cards: !include cards/lights_control/kitchen.yaml
         column_span: 1
         background:
