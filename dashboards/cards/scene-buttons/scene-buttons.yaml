@@ -133,6 +133,47 @@
       ha-state-icon {
         color: {{ '#4b8b85' if is_state(config.entity, 'on') else '#4b8b85' }} !important;
       }
+# All Kitchen Lights ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: light.all_kitchen_lights
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: yellow
+  icon: mdi:ceiling-light-multiple
+  name: Kitchen Lights
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+# Party Mode scene ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.party_mode
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: pink
+  icon: mdi:party-popper
+  name: Party Mode
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
 # Living room AC ----------------------------------------------
 - show_name: true
   show_icon: true

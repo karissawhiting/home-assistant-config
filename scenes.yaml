@@ -445,3 +445,31 @@
     climate.living_room_windmill_ac:
       entity_only: true
   icon: mdi:home-off
+- id: '1784843044999'
+  name: Party Mode
+  entities:
+    light.standing_lamp:
+      state: 'on'
+      rgb_color:
+      - 255
+      - 20
+      - 147
+    light.living_room_arc_lamp:
+      state: 'on'
+      rgb_color:
+      - 128
+      - 0
+      - 128
+    light.table_lamp:
+      state: 'on'
+      rgb_color:
+      - 0
+      - 0
+      - 255
+  metadata:
+    light.standing_lamp:
+      entity_only: true
+    light.living_room_arc_lamp:
+      entity_only: true
+    light.table_lamp:
+      entity_only: true
