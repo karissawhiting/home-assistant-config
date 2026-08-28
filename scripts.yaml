@@ -5,7 +5,7 @@ living_room_set_active_lights_to_warm_white:
   sequence:
   - action: light.turn_on
     target:
-      entity_id: "{{ expand('light.living_room_lights')\n   | selectattr('state',
+      entity_id: "{{ expand('light.all_living_room_lights')\n   | selectattr('state',
         'eq', 'on')\n   | map(attribute='entity_id')\n   | list }}"
     data:
       rgb_color:
