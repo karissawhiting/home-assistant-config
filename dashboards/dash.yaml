@@ -8,13 +8,13 @@ views:
     badges: []
     sections:
       - type: grid
-        cards: !include_dir_merge_list cards/view1_home/bedroom_kitchen/
+        cards: !include cards/lights_control/bedroom_kitchen.yaml
         column_span: 1
         background:
           opacity: 60
         theme: Google Dark Theme
       - type: grid
-        cards: !include cards/view1_home/living_room.yaml
+        cards: !include cards/lights_control/living_room.yaml
         column_span: 1
         background:
           opacity: 60
