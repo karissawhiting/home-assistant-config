@@ -1,0 +1,39 @@
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.goodbye
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    rows: 1
+  tap_action:
+    action: toggle
+  color: purple
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-card {
+        border: 3px solid 7587e1;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.goodnight
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: blue
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }

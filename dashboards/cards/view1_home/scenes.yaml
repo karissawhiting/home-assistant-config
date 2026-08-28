@@ -1,0 +1,167 @@
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.goodnight
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: blue
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.goodbye
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    rows: 1
+  tap_action:
+    action: toggle
+  color: purple
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-card {
+        border: 3px solid 7587e1;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.hello
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: teal
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: light.table_lamp
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: grey
+  icon: mdi:lightbulb-night-outline
+  name: Nightlight
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-state-icon {
+        color: {{ '#533960' if is_state(config.entity, 'on') else '#533960' }} !important;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.bye_cat
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: brown
+  icon: mdi:cat
+  name: Bye Cat
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-state-icon {
+        color: {{ '#826868' if is_state(config.entity, 'on') else '#826868' }} !important;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.evening
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: accent
+  icon: mdi:lamp
+  name: Evening
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-state-icon {
+        color: {{ '#4b8b85' if is_state(config.entity, 'on') else '#4b8b85' }} !important;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: climate.living_room_windmill_ac
+  show_state: true
+  name:
+    type: entity
+  icon: mdi:home-thermometer-outline
+  color: green
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-card {
+        border: 3px solid 7587e1;
+      }
+- show_name: true
+  show_icon: true
+  type: button
+  entity: climate.bedroom_bedroom_ac
+  show_state: true
+  name:
+    type: entity
+  icon: mdi:home-thermometer-outline
+  color: orange
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-card {
+        border: 3px solid 7587e1;
+      }
