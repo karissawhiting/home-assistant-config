@@ -27,7 +27,7 @@
   card_layout: large
   grid_options:
     columns: full
-    rows: 2
+    rows: 3
   tap_action:
     action: toggle
   sub_button:

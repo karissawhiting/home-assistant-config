@@ -69,27 +69,27 @@ views:
     icon: mdi:home-thermometer
     sections:
       - type: grid
-        cards: !include cards/view2_misc/indoor_climate_separator.yaml
+        cards: !include cards/climate/indoor_climate_separator.yaml
         column_span: 13
       - type: grid
-        cards: !include cards/view2_misc/thermostats.yaml
+        cards: !include cards/climate/thermostats.yaml
         column_span: 2
         background:
           opacity: 50
         theme: Google Dark Theme
       - type: grid
-        cards: !include cards/view2_misc/indoor_air_monitor.yaml
+        cards: !include cards/climate/indoor_air_monitor.yaml
         column_span: 1
         background:
           opacity: 60
       - type: grid
-        cards: !include cards/view2_misc/forecast_separator.yaml
+        cards: !include cards/climate/forecast_separator.yaml
         column_span: 13
       - type: grid
-        cards: !include cards/view2_misc/weather_forecast.yaml
+        cards: !include cards/climate/weather_forecast.yaml
         column_span: 2
       - type: grid
-        cards: !include cards/view2_misc/lunar_phase.yaml
+        cards: !include cards/climate/lunar_phase.yaml
       - type: grid
         cards: []
         column_span: 3
@@ -117,6 +117,6 @@ views:
     dense_section_placement: true
     sections:
       - type: grid
-        cards: !include cards/view4_rooms/heading.yaml
+        cards: !include cards/misc/heading.yaml
       - type: grid
-        cards: !include cards/view4_rooms/sky_tonight.yaml
+        cards: !include cards/misc/sky_tonight.yaml

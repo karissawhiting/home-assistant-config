@@ -122,7 +122,6 @@
   styles: |
     ha-card {
       --bubble-main-background-color: rgba(255, 255, 255, 0.07) !important;
-      --bubble-button-main-background-color: rgba(255, 255, 255, 0.07) !important;
       border-radius: 24px !important;
     }
 
