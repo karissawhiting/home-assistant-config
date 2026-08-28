@@ -69,7 +69,15 @@
     columns: 6
     rows: 1
   tap_action:
-    action: toggle
+    action: perform-action
+    perform_action: light.toggle
+    target:
+      entity_id: light.table_lamp
+    data:
+      rgb_color:
+      - 237
+      - 180
+      - 120
   color: grey
   icon: mdi:lightbulb-night-outline
   name: Nightlight
