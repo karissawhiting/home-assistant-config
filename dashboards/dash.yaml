@@ -12,6 +12,7 @@ views:
         column_span: 1
         background:
           opacity: 60
+        theme: Google Dark Theme
       - type: grid
         cards: !include cards/view1_home/living_room.yaml
         column_span: 1
