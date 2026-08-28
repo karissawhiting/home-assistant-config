@@ -8,7 +8,6 @@
 !scripts.yaml
 !scenes.yaml
 !secrets.yaml.example
-!dash.yaml
 
 
 # Directories to track (contents filtered below)
@@ -17,6 +16,7 @@
 !packages/
 !esphome/
 !custom_templates/
+!dashboards/
 
 
 # Inside allowed dirs, keep only text config
