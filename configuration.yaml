@@ -15,4 +15,4 @@ lovelace:
     try-yams:
       mode: yaml
       filename: dashboards/dash.yaml
-      title: "Test"
+      title: "Cranberry Perch"

@@ -38,6 +38,13 @@
             name: Toggle
             tap_action:
               action: toggle
+          - entity: script.bedroom_set_active_lights_to_warm_white
+            icon: mdi:white-balance-sunny
+            name: Set Warm
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
         buttons_layout: inline
     bottom_layout: rows
     bottom:

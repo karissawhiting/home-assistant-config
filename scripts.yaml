@@ -14,3 +14,19 @@ living_room_set_active_lights_to_warm_white:
       - 120
   mode: single
   icon: mdi:weather-sunny
+bedroom_set_active_lights_to_warm_white:
+  alias: Bedroom - Set Active Lights to Warm White
+  description: Sets every bedroom light that is currently ON to warm white (RGB
+    255, 214, 170). Lights that are already off are left off.
+  sequence:
+  - action: light.turn_on
+    target:
+      entity_id: "{{ expand('light.all_bedroom_lights')\n   | selectattr('state',
+        'eq', 'on')\n   | map(attribute='entity_id')\n   | list }}"
+    data:
+      rgb_color:
+      - 237
+      - 180
+      - 120
+  mode: single
+  icon: mdi:weather-sunny
