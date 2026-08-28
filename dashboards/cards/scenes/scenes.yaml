@@ -1,3 +1,4 @@
+# Goodnight scene ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
@@ -16,6 +17,7 @@
         border-radius: 30px;
         border: 3px solid #7587e1;
       }
+# Goodbye scene ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
@@ -37,6 +39,7 @@
       ha-card {
         border: 3px solid 7587e1;
       }
+# Hello scene ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
@@ -55,6 +58,7 @@
         border-radius: 30px;
         border: 3px solid #7587e1;
       }
+# Nightlight (table lamp) ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
@@ -79,6 +83,7 @@
       ha-state-icon {
         color: {{ '#533960' if is_state(config.entity, 'on') else '#533960' }} !important;
       }
+# Bye Cat scene ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
@@ -103,6 +108,7 @@
       ha-state-icon {
         color: {{ '#826868' if is_state(config.entity, 'on') else '#826868' }} !important;
       }
+# Evening scene ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
@@ -127,6 +133,7 @@
       ha-state-icon {
         color: {{ '#4b8b85' if is_state(config.entity, 'on') else '#4b8b85' }} !important;
       }
+# Living room AC ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
@@ -146,6 +153,7 @@
       ha-card {
         border: 3px solid 7587e1;
       }
+# Bedroom AC ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button

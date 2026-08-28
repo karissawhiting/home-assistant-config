@@ -8,7 +8,7 @@ views:
     badges: []
     sections:
       - type: grid
-        cards: !include cards/view1_home/bedroom_kitchen.yaml
+        cards: !include_dir_merge_list cards/view1_home/bedroom_kitchen/
         column_span: 1
         background:
           opacity: 60
@@ -20,7 +20,7 @@ views:
           opacity: 60
         theme: Google Dark Theme
       - type: grid
-        cards: !include cards/view1_home/scenes.yaml
+        cards: !include cards/scenes/scenes.yaml
         column_span: 1
     header:
       card:
@@ -102,93 +102,6 @@ views:
           - icon: mdi:cog
             label: Settings
             url: /config/dashboard
-  - title: Home
-    cards: !include cards/view3_home/view_cards.yaml
-    type: sections
-    badges:
-      - type: entity
-        show_name: false
-        show_state: true
-        show_icon: true
-        entity: weather.forecast_home
-        show_entity_picture: true
-        state_content:
-          - state
-          - temperature
-          - humidity
-      - type: entity
-        show_name: true
-        show_state: true
-        show_icon: true
-        entity: sensor.sun_next_rising
-        time_format: time
-        color: amber
-    sections:
-      - type: grid
-        cards: !include cards/view3_home/lights_separator.yaml
-        column_span: 2
-      - type: grid
-        cards: !include cards/view3_home/scenes.yaml
-        column_span: 1
-      - type: grid
-        cards: !include cards/view3_home/living_room.yaml
-        column_span: 1
-        background:
-          opacity: 60
-        theme: Google Dark Theme
-      - type: grid
-        cards: !include cards/view3_home/bedroom_kitchen.yaml
-        column_span: 1
-        background:
-          opacity: 60
-      - type: grid
-        cards: !include cards/view3_home/indoor_air_monitor.yaml
-        column_span: 1
-        background:
-          opacity: 60
-      - type: grid
-        cards: !include cards/view3_home/climate_weather_separators.yaml
-        column_span: 3
-      - type: grid
-        cards: !include cards/view3_home/thermostats.yaml
-        column_span: 2
-        background:
-          opacity: 50
-        theme: Google Dark Theme
-      - type: grid
-        cards: !include cards/view3_home/moon_weather.yaml
-    header:
-      card:
-        type: markdown
-        content: "# Welcome to ✨ Cranberry Perch! ✨"
-        text_only: true
-        card_mod:
-          style: |
-            ha-markdown h1 {
-              font-size: 5em;
-              text-align: center;
-            }
-      layout: center
-      badges_position: bottom
-      badges_wrap: wrap
-    theme: Google Dark Theme
-    icon: mdi:alpha-x
-    footer:
-      card:
-        type: custom:navbar-card
-        routes:
-          - icon: mdi:home
-            label: Home
-            url: /cranberry-perch/home
-          - icon: mdi:creation
-            label: Automations
-            url: /cranberry-perch/misc
-          - icon: mdi:cog
-            label: Settings
-            url: /config/dashboard
-      max_width: 790
-    max_columns: 3
-    dense_section_placement: true
   - type: sections
     theme: Google Dark Theme
     path: rooms

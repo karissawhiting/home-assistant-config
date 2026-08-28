@@ -1,0 +1,98 @@
+- type: custom:bubble-card
+  card_type: separator
+  sub_button:
+    main: []
+    bottom: []
+  name: Kitchen
+  icon: mdi:fridge
+  grid_options:
+    columns: full
+  card_mod:
+    style: |-
+      ha-card {
+        font-size: 16px;
+        font-weight: normal;
+        color: #7587e1;
+        --bubble-line-background-color: #7587e1;
+      }
+- type: custom:bubble-card
+  card_type: button
+  button_type: state
+  entity: light.kitchen_kitchen_lamps_socket_1
+  name: Kitchen
+  icon: mdi:fridge-outline
+  show_icon: true
+  show_name: true
+  show_state: true
+  card_layout: large
+  grid_options:
+    columns: full
+    rows: 2
+  tap_action:
+    action: toggle
+  sub_button:
+    main:
+      - group:
+          - entity: light.kitchen_kitchen_lamps_socket_1
+            icon: mdi:power
+            name: Toggle
+            tap_action:
+              action: toggle
+        buttons_layout: inline
+    bottom_layout: rows
+    bottom:
+      - group:
+          - entity: light.kitchen_kitchen_lamps_socket_1
+            icon: mdi:fridge-outline
+            name: Kitchen Toggle
+            show_name: false
+            show_state: false
+            show_background: true
+            fill_width: false
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.kitchen_kitchen_lamps_socket_1
+            sub_button_type: toggle
+            fill_width: true
+            always_visible: true
+            show_background: true
+            state_background: true
+            show_name: true
+            show_state: true
+            show_icon: false
+            show_button_info: true
+            tap_action:
+              action: toggle
+            name: Kitchen Lamp
+          - entity: light.kitchen_kitchen_lamps_socket_1
+            icon: mdi:blank
+            fill_width: false
+            show_background: false
+            show_name: false
+            show_state: false
+            show_icon: true
+            tap_action:
+              action: none
+            scrolling_effect: false
+        buttons_layout: inline
+        justify_content: start
+  styles: |
+    ha-card {
+      --bubble-main-background-color: rgba(255, 255, 255, 0.07) !important;
+      border-radius: 24px !important;
+    }
+
+    .kitchen-lamp {
+      background: ${hass.states['light.kitchen_kitchen_lamps_socket_1'].state === 'on' ? 'rgb(250, 208, 140)' : 'rgba(30, 30, 30, 1)'} !important;
+    }
+
+    .kitchen-toggle {
+      background: ${hass.states['light.kitchen_kitchen_lamps_socket_1'].state === 'on' ? 'rgb(250, 208, 140)' : 'rgba(30, 30, 30, 1)'} !important;
+    }
+
+    .kitchen-lamp .bubble-sub-button-name-container {
+      justify-content: space-between !important;
+      width: 100% !important;
+    }
