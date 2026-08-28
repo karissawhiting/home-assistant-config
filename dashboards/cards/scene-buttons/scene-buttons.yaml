@@ -81,7 +81,7 @@
       }
 
       ha-state-icon {
-        color: {{ '#533960' if is_state(config.entity, 'on') else '#533960' }} !important;
+        color: {{ '#8a7fd4' if is_state(config.entity, 'on') else '#8a7fd4' }} !important;
       }
 # All Kitchen Lights ----------------------------------------------
 - show_name: true
