@@ -12,7 +12,7 @@ scene: !include scenes.yaml
 lovelace:
   mode: storage
   dashboards:
-    cranberry-house:
+    cranberry-perch:
       mode: yaml
       filename: dashboards/cranberry-perch.yaml
       title: "Cranberry Perch"
