@@ -1,0 +1,6 @@
+- type: custom:sky-tonight-card
+  showSun: false
+  showBelowHorizon: false
+  showConfiguration: true
+  colors:
+    cardTitle: "#ffffff"

@@ -1,0 +1,119 @@
+- type: custom:bubble-card
+  card_type: button
+  button_type: state
+  entity: light.kitchen_kitchen_lamps_socket_1
+  name: Kitchen Lights
+  icon: mdi:fridge-outline
+  show_icon: true
+  show_name: true
+  show_state: true
+  card_layout: large
+  grid_options:
+    columns: full
+    rows: 2
+  tap_action:
+    action: toggle
+  sub_button:
+    main:
+      - group:
+          - entity: light.kitchen_kitchen_lamps_socket_1
+            icon: mdi:power
+            name: Toggle
+            tap_action:
+              action: toggle
+        buttons_layout: inline
+    bottom_layout: rows
+    bottom:
+      - group:
+          - entity: light.kitchen_kitchen_lamps_socket_1
+            icon: mdi:fridge-outline
+            name: Toggle
+            show_name: false
+            show_state: false
+            show_background: false
+            fill_width: false
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.kitchen_kitchen_lamps_socket_1
+            fill_width: true
+            show_background: true
+            state_background: true
+            show_name: true
+            show_state: true
+            show_icon: false
+            tap_action:
+              action: toggle
+            name: Kitchen
+        buttons_layout: inline
+        justify_content: start
+  styles: >
+    ha-card {
+      --bubble-main-background-color: rgba(255, 255, 255, 0.07) !important;
+      border-radius: 24px !important;
+    }
+
+    .bubble-name {
+      color: rgba(255, 255, 255, 0.95) !important;
+      font-weight: 600 !important;
+    }
+
+    .bubble-state {
+      color: rgba(255, 255, 255, 0.55) !important;
+    }
+
+    .bubble-sub-button {
+      box-sizing: border-box !important;
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      padding-left: 6px !important;
+    }
+
+    .bubble-sub-button * {
+      text-align: left !important;
+    }
+
+    .bubble-sub-button ha-icon, .bubble-sub-button ha-state-icon,
+    .bubble-sub-button .bubble-sub-button-icon, .bubble-sub-button
+    .bubble-icon {
+      order: -1 !important;
+      background-color: rgba(0, 0, 0, 0.2) !important;
+      border-radius: 50% !important;
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-right: 10px !important;
+      --mdc-icon-size: 20px !important;
+    }
+
+    .bubble-sub-button .bubble-sub-button-name, .bubble-sub-button
+    .bubble-sub-button-state {
+      order: 1 !important;
+    }
+
+    .toggle.bubble-sub-button {
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      padding: 0 !important;
+      justify-content: center !important;
+    }
+
+    .toggle ha-icon, .toggle .bubble-sub-button-icon {
+      margin-right: 0 !important;
+      background-color: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    .toggle ha-icon[icon="mdi:power"] {
+      color: ${hass.states['light.kitchen_kitchen_lamps_socket_1'].state === 'on' ? (hass.states['light.kitchen_kitchen_lamps_socket_1'].attributes.rgb_color ? `rgb(${hass.states['light.kitchen_kitchen_lamps_socket_1'].attributes.rgb_color.join(',')})` : '#f7ecb5') : 'rgba(255, 255, 255, 0.5)'} !important;
+    }
+
+    .toggle ha-icon[icon="mdi:fridge-outline"] {
+      color: ${hass.states['light.kitchen_kitchen_lamps_socket_1'].state === 'on' ? (hass.states['light.kitchen_kitchen_lamps_socket_1'].attributes.rgb_color ? `rgb(${hass.states['light.kitchen_kitchen_lamps_socket_1'].attributes.rgb_color.join(',')})` : '#f7ecb5') : 'rgba(255, 255, 255, 0.5)'} !important;
+    }

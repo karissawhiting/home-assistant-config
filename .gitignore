@@ -27,3 +27,5 @@ blueprints/**
 !blueprints/**/
 !blueprints/**/*.yaml
 
+dashboards/.DS_Store
+dashboards/cards/.DS_Store

@@ -1,0 +1,22 @@
+- show_current: true
+  show_forecast: true
+  type: weather-forecast
+  entity: weather.forecast_home
+  forecast_type: hourly
+  grid_options:
+    columns: full
+    rows: auto
+  forecast_slots: 10
+  secondary_info_attribute: humidity
+- type: heading
+  heading: New section
+- show_current: true
+  show_forecast: true
+  type: weather-forecast
+  entity: weather.forecast_home
+  forecast_type: daily
+  grid_options:
+    rows: auto
+    columns: full
+  secondary_info_attribute: uv_index
+  forecast_slots: 10

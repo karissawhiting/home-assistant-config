@@ -1,0 +1,191 @@
+- type: custom:bubble-card
+  card_type: separator
+  sub_button:
+    main: []
+    bottom: []
+  name: Bedroom
+  icon: mdi:bed
+  grid_options:
+    columns: full
+  card_mod:
+    style: |-
+      ha-card {
+        font-size: 16px;
+        font-weight: normal;
+        color: #7587e1;
+        --bubble-line-background-color: #7587e1;
+      }
+- type: custom:bubble-card
+  card_type: button
+  button_type: state
+  entity: light.all_bedroom_lights
+  name: Bedroom Lights
+  icon: mdi:bed-outline
+  show_icon: true
+  show_name: true
+  show_state: true
+  card_layout: large
+  grid_options:
+    columns: full
+    rows: 3
+  tap_action:
+    action: toggle
+  sub_button:
+    main:
+      - group:
+          - entity: light.all_bedroom_lights
+            icon: mdi:power
+            name: Toggle
+            tap_action:
+              action: toggle
+        buttons_layout: inline
+    bottom_layout: rows
+    bottom:
+      - group:
+          - entity: light.bedroom_bedroom_lamp_lightbulb_lamp
+            icon: mdi:lightbulb
+            name: Toggle
+            show_name: false
+            show_state: false
+            show_background: false
+            fill_width: false
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.bedroom_bedroom_lamp_lightbulb_lamp
+            fill_width: true
+            show_background: true
+            state_background: true
+            show_name: true
+            show_state: true
+            show_icon: false
+            name: Bedroom Lightbulb Lamp
+            tap_action:
+              action: toggle
+        buttons_layout: inline
+        justify_content: start
+      - group:
+          - entity: light.bedroom_bedroom_lamp
+            icon: mdi:floor-lamp
+            name: Toggle
+            show_name: false
+            show_state: false
+            show_background: false
+            fill_width: false
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.bedroom_bedroom_lamp
+            sub_button_type: slider
+            fill_width: true
+            always_visible: true
+            show_background: true
+            state_background: true
+            show_name: true
+            show_state: true
+            show_icon: false
+            show_button_info: true
+            allow_light_slider_to_0: true
+            tap_action:
+              action: more-info
+            name: Bedroom Lamp
+        buttons_layout: inline
+        justify_content: start
+  styles: >
+    ha-card {
+      --bubble-main-background-color: rgba(255, 255, 255, 0.07) !important;
+      border-radius: 24px !important;
+    }
+
+    .bubble-name {
+      color: rgba(255, 255, 255, 0.95) !important;
+      font-weight: 600 !important;
+    }
+
+    .bubble-state {
+      color: rgba(255, 255, 255, 0.55) !important;
+    }
+
+    .bubble-sub-button {
+      box-sizing: border-box !important;
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      padding-left: 6px !important;
+    }
+
+    .bubble-sub-button * {
+      text-align: left !important;
+    }
+
+    .bubble-sub-button ha-icon, .bubble-sub-button ha-state-icon,
+    .bubble-sub-button .bubble-sub-button-icon, .bubble-sub-button
+    .bubble-icon {
+      order: -1 !important;
+      background-color: rgba(0, 0, 0, 0.2) !important;
+      border-radius: 50% !important;
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-right: 10px !important;
+      --mdc-icon-size: 20px !important;
+    }
+
+    .bubble-sub-button .bubble-sub-button-name, .bubble-sub-button
+    .bubble-sub-button-state {
+      order: 1 !important;
+    }
+
+    .toggle.bubble-sub-button {
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      padding: 0 !important;
+      justify-content: center !important;
+    }
+
+    .toggle ha-icon, .toggle .bubble-sub-button-icon {
+      margin-right: 0 !important;
+      background-color: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    .toggle ha-icon[icon="mdi:power"] {
+      color: ${hass.states['light.all_bedroom_lights'].state === 'on' ? (hass.states['light.all_bedroom_lights'].attributes.rgb_color ? `rgb(${hass.states['light.all_bedroom_lights'].attributes.rgb_color.join(',')})` : '#f7ecb5') : 'rgba(255, 255, 255, 0.5)'} !important;
+    }
+
+    .toggle ha-icon[icon="mdi:lightbulb"] {
+      color: ${hass.states['light.bedroom_bedroom_lamp_lightbulb_lamp'].state === 'on' ? (hass.states['light.bedroom_bedroom_lamp_lightbulb_lamp'].attributes.rgb_color ? `rgb(${hass.states['light.bedroom_bedroom_lamp_lightbulb_lamp'].attributes.rgb_color.join(',')})` : '#f7ecb5') : 'rgba(255, 255, 255, 0.5)'} !important;
+    }
+
+    .toggle ha-icon[icon="mdi:floor-lamp"] {
+      color: ${hass.states['light.bedroom_bedroom_lamp'].state === 'on' ? (hass.states['light.bedroom_bedroom_lamp'].attributes.rgb_color ? `rgb(${hass.states['light.bedroom_bedroom_lamp'].attributes.rgb_color.join(',')})` : '#f7ecb5') : 'rgba(255, 255, 255, 0.5)'} !important;
+    }
+
+    /* ${icon.setAttribute("icon", state === 'on' ? "mdi:bed" :
+    "mdi:bed-outline")} */
+- type: custom:bubble-card
+  card_type: separator
+  sub_button:
+    main: []
+    bottom: []
+  name: Kitchen
+  icon: mdi:fridge
+  grid_options:
+    columns: full
+  card_mod:
+    style: |-
+      ha-card {
+        font-size: 16px;
+        font-weight: normal;
+        color: #7587e1;
+        --bubble-line-background-color: #7587e1;
+      }
+- type: vertical-stack
+  cards:
+    !include kitchen_bubble_card.yaml

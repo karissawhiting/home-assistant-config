@@ -1,0 +1,32 @@
+- type: custom:lunar-phase-card
+  southern_hemisphere: false
+  latitude: 40.7452633
+  longitude: -73.9225465
+  language: en
+  hide_background: false
+  hide_starfield: false
+  custom_background: >-
+    https://cdn.jsdelivr.net/gh/ngocjohn/lunar-phase-card@1.7.3/background/moon_bg_2.png
+  custom_theme: Google Dark Theme
+  default_section: base
+  compact_view: false
+  compact_mode: default
+  moon_position: center
+  hide_buttons: false
+  compact_menu_button: true
+  hide_compact_label: false
+  calendar_modal: true
+  hide_items:
+    - nextNewMoon
+    - distance
+    - azimuthDegress
+    - altitudeDegrees
+  max_data_per_page: 10
+  mile_unit: true
+  12hr_format: true
+  graph_chart_config:
+    show_legend: false
+    x_ticks: false
+  grid_options:
+    columns: full
+    rows: auto
