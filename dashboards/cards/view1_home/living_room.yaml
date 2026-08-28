@@ -91,7 +91,7 @@
       - group:
           - entity: light.desk_lamp_socket
             icon: mdi:desk-lamp
-            name: Table Toggle
+            name: Desk Toggle
             show_name: false
             show_state: false
             show_background: true
@@ -107,7 +107,7 @@
             show_name: true
             show_state: true
             show_icon: false
-            name: Table Lamp
+            name: Desk Lamp
             tap_action:
               action: toggle
           - entity: light.desk_lamp_socket
@@ -233,13 +233,53 @@
               action: more-info
         buttons_layout: inline
         justify_content: start
+      - group:
+          - entity: light.table_lamp
+            icon: mdi:floor-lamp
+            name: Toggle
+            show_name: false
+            show_state: false
+            show_background: true
+            fill_width: false
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.table_lamp
+            sub_button_type: slider
+            fill_width: true
+            always_visible: true
+            show_background: true
+            state_background: true
+            show_name: true
+            show_state: true
+            show_icon: false
+            show_button_info: true
+            allow_light_slider_to_0: true
+            hold_action:
+              action: more-info
+            name: Table Lamp
+            tap_to_slide: false
+          - entity: light.table_lamp
+            icon: mdi:palette
+            fill_width: false
+            show_background: true
+            state_background: false
+            show_name: false
+            show_state: false
+            show_icon: true
+            name: Colors
+            tap_action:
+              action: more-info
+        buttons_layout: inline
+        justify_content: start
   styles: |
     ha-card {
       --bubble-main-background-color: rgba(255, 255, 255, 0.07) !important;
       border-radius: 24px !important;
     }
 
-    .table-lamp {
+    .desk-lamp {
       background: ${hass.states['light.desk_lamp_socket'].state === 'on' ? 'rgb(250, 208, 140)' : 'rgba(30, 30, 30, 1)'} !important;
     }
 
@@ -247,7 +287,7 @@
       background: ${hass.states['light.octagon_lamp_socket'].state === 'on' ? 'rgb(250, 208, 140)' : 'rgba(30, 30, 30, 1)'} !important;
     }
 
-    .table-toggle {
+    .desk-toggle {
       background: ${hass.states['light.desk_lamp_socket'].state === 'on' ? 'rgb(250, 208, 140)' : 'rgba(30, 30, 30, 1)'} !important;
     }
 
@@ -255,7 +295,7 @@
       background: ${hass.states['light.octagon_lamp_socket'].state === 'on' ? 'rgb(250, 208, 140)' : 'rgba(30, 30, 30, 1)'} !important;
     }
 
-    .table-lamp .bubble-sub-button-name-container,
+    .desk-lamp .bubble-sub-button-name-container,
     .octagon-lamp .bubble-sub-button-name-container {
       justify-content: space-between !important;
       width: 100% !important;
