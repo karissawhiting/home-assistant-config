@@ -1,0 +1,447 @@
+- id: '1784527648320'
+  name: Goodnight
+  entities:
+    light.kitchen_kitchen_lamps_socket_1:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      friendly_name: Kitchen Lamps Socket 1
+      supported_features: 0
+      state: 'off'
+    light.all_living_room_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: All Living Room Lights
+      supported_features: 40
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.living_room_arc_lamp
+      - light.all_shelf_lights
+      - light.octagon_lamp_socket
+      - light.standing_lamp
+      - light.desk_lamp_socket
+      state: 'off'
+    climate.living_room_windmill_ac:
+      hvac_modes:
+      - 'off'
+      - cool
+      - auto
+      - fan_only
+      min_temp: 45
+      max_temp: 95
+      fan_modes:
+      - Low
+      - Medium
+      - High
+      - Auto
+      current_temperature: 74
+      temperature: 68
+      fan_mode: Low
+      icon: mdi:air-conditioner
+      friendly_name: Living Room AC
+      supported_features: 393
+      state: 'off'
+  metadata:
+    light.kitchen_kitchen_lamps_socket_1:
+      entity_only: true
+    light.all_living_room_lights:
+      entity_only: true
+    climate.living_room_windmill_ac:
+      entity_only: true
+  icon: mdi:home-off
+- id: '1784564880452'
+  name: Goodbye
+  entities:
+    light.all_bedroom_lights:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.bedroom_bedroom_lamp
+      - light.bedroom_globe_lamp
+      friendly_name: All Bedroom Lights
+      supported_features: 40
+      state: 'off'
+    climate.bedroom_bedroom_ac:
+      hvac_modes:
+      - 'off'
+      - cool
+      - auto
+      - fan_only
+      - dry
+      min_temp: 60
+      max_temp: 90
+      target_temp_step: 1
+      fan_modes:
+      - auto
+      - low
+      - medium
+      - high
+      preset_modes:
+      - none
+      - sleep
+      swing_modes:
+      - 'off'
+      - vertical
+      current_temperature: 74
+      temperature: 67
+      fan_mode: high
+      hvac_action: 'off'
+      preset_mode: none
+      swing_mode: vertical
+      check_filter: false
+      friendly_name: Bedroom AC
+      supported_features: 441
+      state: 'off'
+    light.kitchen_kitchen_lamps_socket_1:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      friendly_name: Kitchen Lamps Socket 1
+      supported_features: 0
+      state: 'off'
+    light.all_living_room_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: All Living Room Lights
+      supported_features: 40
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.living_room_arc_lamp
+      - light.all_shelf_lights
+      - light.octagon_lamp_socket
+      - light.standing_lamp
+      - light.desk_lamp_socket
+      state: 'off'
+    climate.living_room_windmill_ac:
+      hvac_modes:
+      - 'off'
+      - cool
+      - auto
+      - fan_only
+      min_temp: 45
+      max_temp: 95
+      fan_modes:
+      - Low
+      - Medium
+      - High
+      - Auto
+      current_temperature: 71
+      temperature: 68
+      fan_mode: Low
+      icon: mdi:air-conditioner
+      friendly_name: Living Room AC
+      supported_features: 393
+      state: 'off'
+  metadata:
+    light.all_bedroom_lights:
+      entity_only: true
+    climate.bedroom_bedroom_ac:
+      entity_only: true
+    light.kitchen_kitchen_lamps_socket_1:
+      entity_only: true
+    light.all_living_room_lights:
+      entity_only: true
+    climate.living_room_windmill_ac:
+      entity_only: true
+  icon: mdi:home-off
+- id: '1784842438884'
+  name: Hello
+  entities:
+    climate.living_room_windmill_ac:
+      hvac_modes:
+      - 'off'
+      - cool
+      - auto
+      - fan_only
+      min_temp: 45
+      max_temp: 95
+      fan_modes:
+      - Low
+      - Medium
+      - High
+      - Auto
+      current_temperature: 74
+      temperature: 69
+      fan_mode: Auto
+      icon: mdi:air-conditioner
+      friendly_name: Living Room AC
+      supported_features: 393
+      state: cool
+    light.living_room_arc_lamp:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 97
+      color_temp_kelvin: 3690
+      hs_color:
+      - 27.004
+      - 40.795
+      rgb_color:
+      - 255
+      - 198
+      - 151
+      xy_color:
+      - 0.44
+      - 0.371
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Arc Lamp
+      supported_features: 40
+      state: 'on'
+    light.standing_lamp:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 105
+      color_temp_kelvin: 2202
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Standing Lamp
+      supported_features: 40
+      state: 'on'
+  metadata:
+    climate.living_room_windmill_ac:
+      entity_only: true
+    light.living_room_arc_lamp:
+      entity_only: true
+    light.standing_lamp:
+      entity_only: true
+  icon: mdi:home-heart
+- id: '1784842727897'
+  name: Evening
+  entities:
+    light.all_shelf_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 30
+      color_temp_kelvin: 2000
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 137
+      - 14
+      xy_color:
+      - 0.598
+      - 0.383
+      entity_id:
+      - light.top_shelf_bulb
+      - light.living_room_bottom_shelf_lights_lamp
+      - light.lower_shelf_light
+      friendly_name: All Shelf Lights
+      supported_features: 40
+      state: 'on'
+    light.standing_lamp:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 56
+      color_temp_kelvin: 2202
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Standing Lamp
+      supported_features: 40
+      state: 'on'
+    light.living_room_arc_lamp:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 43
+      color_temp_kelvin: 2202
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Arc Lamp
+      supported_features: 40
+      state: 'on'
+  metadata:
+    light.all_shelf_lights:
+      entity_only: true
+    light.standing_lamp:
+      entity_only: true
+    light.living_room_arc_lamp:
+      entity_only: true
+  icon: mdi:lamp
+- id: '1784843044445'
+  name: Bye Cat
+  entities:
+    light.all_bedroom_lights:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.bedroom_bedroom_lamp
+      - light.bedroom_globe_lamp
+      friendly_name: All Bedroom Lights
+      supported_features: 40
+      state: 'off'
+    climate.bedroom_bedroom_ac:
+      hvac_modes:
+      - 'off'
+      - cool
+      - auto
+      - fan_only
+      - dry
+      min_temp: 60
+      max_temp: 90
+      target_temp_step: 1
+      fan_modes:
+      - auto
+      - low
+      - medium
+      - high
+      preset_modes:
+      - none
+      - sleep
+      swing_modes:
+      - 'off'
+      - vertical
+      current_temperature: 74
+      temperature: 67
+      fan_mode: high
+      hvac_action: 'off'
+      preset_mode: none
+      swing_mode: vertical
+      check_filter: false
+      friendly_name: Bedroom AC
+      supported_features: 441
+      state: 'off'
+    light.kitchen_kitchen_lamps_socket_1:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      friendly_name: Kitchen Lamps Socket 1
+      supported_features: 0
+      state: 'off'
+    light.all_living_room_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 7042
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: All Living Room Lights
+      supported_features: 40
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.living_room_arc_lamp
+      - light.all_shelf_lights
+      - light.octagon_lamp_socket
+      - light.standing_lamp
+      - light.desk_lamp_socket
+      state: 'off'
+    climate.living_room_windmill_ac:
+      hvac_modes:
+      - 'off'
+      - cool
+      - auto
+      - fan_only
+      min_temp: 45
+      max_temp: 95
+      fan_modes:
+      - Low
+      - Medium
+      - High
+      - Auto
+      current_temperature: 73
+      temperature: 86
+      fan_mode: Auto
+      icon: mdi:air-conditioner
+      friendly_name: Living Room AC
+      supported_features: 393
+      state: auto
+  metadata:
+    light.all_bedroom_lights:
+      entity_only: true
+    climate.bedroom_bedroom_ac:
+      entity_only: true
+    light.kitchen_kitchen_lamps_socket_1:
+      entity_only: true
+    light.all_living_room_lights:
+      entity_only: true
+    climate.living_room_windmill_ac:
+      entity_only: true
+  icon: mdi:home-off
