@@ -8,17 +8,17 @@ views:
     badges: []
     sections:
       - type: grid
-        cards:
-          - type: vertical-stack
-            cards: !include cards/lights_control/bedroom.yaml
-          - type: vertical-stack
-            cards: !include cards/lights_control/kitchen.yaml
+        cards: !include cards/lights_control/living_room.yaml
         column_span: 1
         background:
           opacity: 60
         theme: Google Dark Theme
       - type: grid
-        cards: !include cards/lights_control/living_room.yaml
+        cards:
+          - type: vertical-stack
+            cards: !include cards/lights_control/bedroom.yaml
+          - type: vertical-stack
+            cards: !include cards/lights_control/kitchen.yaml
         column_span: 1
         background:
           opacity: 60
