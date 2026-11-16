@@ -38,6 +38,8 @@
             name: Toggle
             tap_action:
               action: toggle
+            hold_action:
+              action: more-info
           - entity: script.living_room_set_active_lights_to_warm_white
             icon: mdi:white-balance-sunny
             name: Set Warm

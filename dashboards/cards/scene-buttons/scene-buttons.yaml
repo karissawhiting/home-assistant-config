@@ -2,7 +2,7 @@
 - show_name: true
   show_icon: true
   type: button
-  entity: scene.goodnight
+  entity: scene.whole_apartment_goodnight
   theme: Google Dark Theme
   show_state: false
   grid_options:
@@ -21,7 +21,7 @@
 - show_name: true
   show_icon: true
   type: button
-  entity: scene.goodbye
+  entity: scene.whole_apartment_goodbye
   theme: Google Dark Theme
   show_state: false
   grid_options:
@@ -43,7 +43,7 @@
 - show_name: true
   show_icon: true
   type: button
-  entity: scene.hello
+  entity: scene.whole_apartment_hello
   theme: Google Dark Theme
   show_state: false
   grid_options:
@@ -75,9 +75,9 @@
       entity_id: light.table_lamp
     data:
       rgb_color:
-      - 237
-      - 180
-      - 120
+        - 237
+        - 180
+        - 120
   color: grey
   icon: mdi:lightbulb-night-outline
   name: Nightlight
@@ -115,7 +115,7 @@
 - show_name: true
   show_icon: true
   type: button
-  entity: scene.evening
+  entity: scene.living_room_evening
   theme: Google Dark Theme
   show_state: false
   grid_options:
@@ -136,36 +136,11 @@
       ha-state-icon {
         color: {{ '#4b8b85' if is_state(config.entity, 'on') else '#4b8b85' }} !important;
       }
-# Bye Cat scene ----------------------------------------------
-- show_name: true
-  show_icon: true
-  type: button
-  entity: scene.bye_cat
-  theme: Google Dark Theme
-  show_state: false
-  grid_options:
-    columns: 6
-    rows: 1
-  tap_action:
-    action: toggle
-  color: brown
-  icon: mdi:cat
-  name: Bye Cat
-  card_mod:
-    style: |-
-      ha-card {
-        border-radius: 30px;
-        border: 3px solid #7587e1;
-      }
-
-      ha-state-icon {
-        color: {{ '#826868' if is_state(config.entity, 'on') else '#826868' }} !important;
-      }
 # Party Mode scene ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
-  entity: scene.party_mode
+  entity: scene.living_room_party_mode
   theme: Google Dark Theme
   show_state: false
   grid_options:
@@ -182,43 +157,86 @@
         border-radius: 30px;
         border: 3px solid #7587e1;
       }
-# Living room AC ----------------------------------------------
+# Cinema scene (tap opens mode pop-up) ------------------------------------------
 - show_name: true
   show_icon: true
   type: button
-  entity: climate.living_room_windmill_ac
-  show_state: true
-  name:
-    type: entity
-  icon: mdi:home-thermometer-outline
-  color: green
+  name: Cinema
+  icon: mdi:movie-open
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: navigate
+    navigation_path: "#cinema"
+  color: indigo
   card_mod:
     style: |-
       ha-card {
         border-radius: 30px;
         border: 3px solid #7587e1;
       }
-
-      ha-card {
-        border: 3px solid 7587e1;
-      }
-# Bedroom AC ----------------------------------------------
-- show_name: true
-  show_icon: true
-  type: button
-  entity: climate.bedroom_bedroom_ac
-  show_state: true
-  name:
-    type: entity
-  icon: mdi:home-thermometer-outline
-  color: orange
-  card_mod:
-    style: |-
-      ha-card {
-        border-radius: 30px;
-        border: 3px solid #7587e1;
-      }
-
-      ha-card {
-        border: 3px solid 7587e1;
-      }
+# Cinema mode pop-up (hidden until the Cinema button is tapped) ------------------
+- type: custom:bubble-card
+  card_type: pop-up
+  hash: "#cinema"
+  close_on_click: true
+  popup_mode: fit-content
+  name: Cinema
+  icon: mdi:movie-open
+  cards:
+    - type: grid
+      columns: 3
+      square: false
+      cards:
+        # More light: placeholder until a scene exists
+        - show_name: true
+          show_icon: true
+          type: button
+          name: More light
+          icon: mdi:brightness-7
+          show_state: false
+          tap_action:
+            action: none
+          card_mod:
+            style: |-
+              ha-card {
+                border-radius: 30px;
+                border: 3px solid #7587e1;
+              }
+        # Less light: Half Cinema scene
+        - show_name: true
+          show_icon: true
+          type: button
+          entity: scene.living_room_half_cinema
+          name: Less light
+          icon: mdi:brightness-5
+          show_state: false
+          tap_action:
+            action: toggle
+          color: amber
+          card_mod:
+            style: |-
+              ha-card {
+                border-radius: 30px;
+                border: 3px solid #7587e1;
+              }
+        # Least light: Cinema scene
+        - show_name: true
+          show_icon: true
+          type: button
+          entity: scene.living_room_cinema
+          name: Least light
+          icon: mdi:brightness-3
+          show_state: false
+          tap_action:
+            action: toggle
+          color: indigo
+          card_mod:
+            style: |-
+              ha-card {
+                border-radius: 30px;
+                border: 3px solid #7587e1;
+              }

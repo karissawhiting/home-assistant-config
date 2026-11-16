@@ -1,6 +1,7 @@
 # Whitelist approach: ignore everything, then allow specific files
 /*
 !.gitignore
+!README.md
 
 # Core config
 !configuration.yaml
@@ -29,3 +30,12 @@ blueprints/**
 
 dashboards/.DS_Store
 dashboards/cards/.DS_Store
+
+# Claude Code local settings
+.claude/
+
+# Sensitive / runtime files (explicit, in case the whitelist changes)
+secrets.yaml
+.storage/
+*.db
+*.log

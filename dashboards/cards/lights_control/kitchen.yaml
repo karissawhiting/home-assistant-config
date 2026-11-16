@@ -18,7 +18,7 @@
 - type: custom:bubble-card
   card_type: button
   button_type: state
-  entity: light.kitchen_kitchen_lamps_socket_1
+  entity: light.all_kitchen_lights
   name: Kitchen
   icon: mdi:fridge-outline
   show_icon: true
@@ -33,11 +33,13 @@
   sub_button:
     main:
       - group:
-          - entity: light.kitchen_kitchen_lamps_socket_1
+          - entity: light.all_kitchen_lights
             icon: mdi:power
             name: Toggle
             tap_action:
               action: toggle
+            hold_action:
+              action: more-info
           - entity: script.kitchen_set_active_lights_to_warm_white
             icon: mdi:white-balance-sunny
             name: Set Warm

@@ -1,48 +1,57 @@
 living_room_set_active_lights_to_warm_white:
   alias: Living Room - Set Active Lights to Warm White
-  description: Sets every living room light that is currently ON to warm white (RGB
-    255, 214, 170). Lights that are already off are left off.
+  description: Sets every living room light that is currently ON to warm white (2202K;
+    shelf lights get 2000K). Brightness is left unchanged, and lights
+    that are off stay off.
+  variables:
+    shelf_lights:
+    - light.top_shelf_light
+    - light.living_room_bottom_shelf_lights_lamp
+    - light.lower_shelf_light
+    active: "{{ expand('light.all_living_room_lights') | selectattr('state', 'eq',
+      'on') | map(attribute='entity_id') | list }}"
+    active_shelf: "{{ active | select('in', shelf_lights) | list }}"
+    active_other: "{{ active | reject('in', shelf_lights) | list }}"
   sequence:
-  - action: light.turn_on
-    target:
-      entity_id: "{{ expand('light.all_living_room_lights')\n   | selectattr('state',
-        'eq', 'on')\n   | map(attribute='entity_id')\n   | list }}"
-    data:
-      rgb_color:
-      - 237
-      - 180
-      - 120
+  - if: "{{ active_other | count > 0 }}"
+    then:
+    - action: light.turn_on
+      target:
+        entity_id: "{{ active_other }}"
+      data:
+        color_temp_kelvin: 2202
+  - if: "{{ active_shelf | count > 0 }}"
+    then:
+    - action: light.turn_on
+      target:
+        entity_id: "{{ active_shelf }}"
+      data:
+        color_temp_kelvin: 2000
   mode: single
   icon: mdi:weather-sunny
 bedroom_set_active_lights_to_warm_white:
   alias: Bedroom - Set Active Lights to Warm White
-  description: Sets every bedroom light that is currently ON to warm white (RGB
-    255, 214, 170). Lights that are already off are left off.
+  description: Sets every bedroom light that is currently ON to warm white (2202K).
+    Brightness is left unchanged, and lights that are off stay off.
   sequence:
   - action: light.turn_on
     target:
       entity_id: "{{ expand('light.all_bedroom_lights')\n   | selectattr('state',
         'eq', 'on')\n   | map(attribute='entity_id')\n   | list }}"
     data:
-      rgb_color:
-      - 237
-      - 180
-      - 120
+      color_temp_kelvin: 2202
   mode: single
   icon: mdi:weather-sunny
 kitchen_set_active_lights_to_warm_white:
   alias: Kitchen - Set Active Lights to Warm White
-  description: Sets every kitchen light that is currently ON to warm white (RGB
-    255, 214, 170). Lights that are already off are left off.
+  description: Sets every kitchen light that is currently ON to warm white (2202K).
+    Brightness is left unchanged, and lights that are off stay off.
   sequence:
   - action: light.turn_on
     target:
       entity_id: "{{ expand('light.all_kitchen_lights')\n   | selectattr('state',
         'eq', 'on')\n   | map(attribute='entity_id')\n   | list }}"
     data:
-      rgb_color:
-      - 237
-      - 180
-      - 120
+      color_temp_kelvin: 2202
   mode: single
   icon: mdi:weather-sunny

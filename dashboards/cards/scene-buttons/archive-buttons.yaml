@@ -1,0 +1,86 @@
+# Archived buttons removed from scene-buttons.yaml (2026-11-15).
+# Not included in any dashboard. Copy a block back into scene-buttons.yaml to restore.
+
+# Living room AC ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: climate.living_room_windmill_ac
+  show_state: true
+  name:
+    type: entity
+  icon: mdi:home-thermometer-outline
+  color: green
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-card {
+        border: 3px solid 7587e1;
+      }
+# Bedroom AC ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: climate.bedroom_bedroom_ac
+  show_state: true
+  name:
+    type: entity
+  icon: mdi:home-thermometer-outline
+  color: orange
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-card {
+        border: 3px solid 7587e1;
+      }
+
+# Half Cinema scene ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.living_room_half_cinema
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: amber
+  icon: mdi:movie-open-outline
+  name: Half Cinema
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+# Cinema scene ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: scene.living_room_cinema
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: indigo
+  icon: mdi:movie-open
+  name: Cinema
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
