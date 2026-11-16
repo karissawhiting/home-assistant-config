@@ -8,7 +8,11 @@ views:
     badges: []
     sections:
       - type: grid
-        cards: !include cards/lights_control/living_room.yaml
+        cards:
+          - type: vertical-stack
+            cards: !include cards/lights_control/living_room.yaml
+          - type: vertical-stack
+            cards: !include cards/weather/weather.yaml
         column_span: 1
         background:
           opacity: 60
@@ -69,12 +73,6 @@ views:
       - type: grid
         cards: !include cards/climate/indoor_climate_separator.yaml
         column_span: 13
-      - type: grid
-        cards: !include cards/climate/thermostats.yaml
-        column_span: 2
-        background:
-          opacity: 50
-        theme: Google Dark Theme
       - type: grid
         cards: !include cards/climate/indoor_air_monitor.yaml
         column_span: 1

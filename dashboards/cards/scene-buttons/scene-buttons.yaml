@@ -1,22 +1,3 @@
-# Goodnight scene ----------------------------------------------
-- show_name: true
-  show_icon: true
-  type: button
-  entity: scene.whole_apartment_goodnight
-  theme: Google Dark Theme
-  show_state: false
-  grid_options:
-    columns: 6
-    rows: 1
-  tap_action:
-    action: toggle
-  color: blue
-  card_mod:
-    style: |-
-      ha-card {
-        border-radius: 30px;
-        border: 3px solid #7587e1;
-      }
 # Goodbye scene ----------------------------------------------
 - show_name: true
   show_icon: true
@@ -51,36 +32,7 @@
     rows: 1
   tap_action:
     action: toggle
-  color: teal
-  card_mod:
-    style: |-
-      ha-card {
-        border-radius: 30px;
-        border: 3px solid #7587e1;
-      }
-# Nightlight (table lamp) ----------------------------------------------
-- show_name: true
-  show_icon: true
-  type: button
-  entity: light.table_lamp
-  theme: Google Dark Theme
-  show_state: false
-  grid_options:
-    columns: 6
-    rows: 1
-  tap_action:
-    action: perform-action
-    perform_action: light.toggle
-    target:
-      entity_id: light.table_lamp
-    data:
-      rgb_color:
-        - 237
-        - 180
-        - 120
-  color: grey
-  icon: mdi:lightbulb-night-outline
-  name: Nightlight
+  color: orange
   card_mod:
     style: |-
       ha-card {
@@ -89,22 +41,21 @@
       }
 
       ha-state-icon {
-        color: {{ '#8a7fd4' if is_state(config.entity, 'on') else '#8a7fd4' }} !important;
+        color: #ff8a50 !important;
       }
-# All Kitchen Lights ----------------------------------------------
+# Goodnight scene ----------------------------------------------
 - show_name: true
   show_icon: true
   type: button
-  entity: light.all_kitchen_lights
+  entity: scene.whole_apartment_goodnight
+  theme: Google Dark Theme
   show_state: false
   grid_options:
     columns: 6
     rows: 1
   tap_action:
     action: toggle
-  color: yellow
-  icon: mdi:ceiling-light-multiple
-  name: Kitchen Lights
+  color: blue
   card_mod:
     style: |-
       ha-card {
@@ -135,6 +86,59 @@
 
       ha-state-icon {
         color: {{ '#4b8b85' if is_state(config.entity, 'on') else '#4b8b85' }} !important;
+      }
+# All Kitchen Lights ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: light.all_kitchen_lights
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: toggle
+  color: yellow
+  icon: mdi:ceiling-light-multiple
+  name: Kitchen Lights
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+      {% if is_state(config.entity, 'on') %}
+      ha-state-icon {
+        color: #fff59d !important;
+      }
+      {% endif %}
+# Nightlight (harp lamp) ----------------------------------------------
+- show_name: true
+  show_icon: true
+  type: button
+  entity: light.harp_lamp
+  theme: Google Dark Theme
+  show_state: false
+  grid_options:
+    columns: 6
+    rows: 1
+  tap_action:
+    action: perform-action
+    perform_action: script.living_room_nightlight
+  hold_action:
+    action: more-info
+  color: grey
+  icon: mdi:lightbulb-night-outline
+  name: Nightlight
+  card_mod:
+    style: |-
+      ha-card {
+        border-radius: 30px;
+        border: 3px solid #7587e1;
+      }
+
+      ha-state-icon {
+        color: {{ '#8a7fd4' if is_state(config.entity, 'on') else '#8a7fd4' }} !important;
       }
 # Party Mode scene ----------------------------------------------
 - show_name: true
@@ -183,29 +187,14 @@
   card_type: pop-up
   hash: "#cinema"
   close_on_click: true
-  popup_mode: fit-content
+  popup_mode: centered
   name: Cinema
   icon: mdi:movie-open
   cards:
     - type: grid
-      columns: 3
+      columns: 2
       square: false
       cards:
-        # More light: placeholder until a scene exists
-        - show_name: true
-          show_icon: true
-          type: button
-          name: More light
-          icon: mdi:brightness-7
-          show_state: false
-          tap_action:
-            action: none
-          card_mod:
-            style: |-
-              ha-card {
-                border-radius: 30px;
-                border: 3px solid #7587e1;
-              }
         # Less light: Half Cinema scene
         - show_name: true
           show_icon: true
@@ -216,12 +205,14 @@
           show_state: false
           tap_action:
             action: toggle
-          color: amber
           card_mod:
             style: |-
               ha-card {
                 border-radius: 30px;
                 border: 3px solid #7587e1;
+              }
+              ha-state-icon {
+                color: #fff59d !important;
               }
         # Least light: Cinema scene
         - show_name: true

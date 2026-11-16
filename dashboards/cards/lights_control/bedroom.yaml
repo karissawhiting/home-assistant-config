@@ -30,14 +30,17 @@
     rows: 3
   tap_action:
     action: toggle
+  hold_action:
+    action: more-info
   sub_button:
     main:
       - group:
           - entity: light.all_bedroom_lights
             icon: mdi:power
-            name: Toggle
+            name: All On
             tap_action:
-              action: toggle
+              action: perform-action
+              perform_action: script.bedroom_all_lights_on_warm
             hold_action:
               action: more-info
           - entity: script.bedroom_set_active_lights_to_warm_white

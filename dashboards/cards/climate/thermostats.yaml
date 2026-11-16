@@ -1,24 +1,3 @@
-- type: thermostat
-  entity: climate.windmill_ac_2
-  features:
-    - type: climate-fan-modes
-      style: dropdown
-    - type: climate-hvac-modes
-      hvac_modes:
-        - "off"
-        - cool
-        - auto
-        - fan_only
-  grid_options:
-    columns: 12
-    rows: 5
-- type: thermostat
-  entity: climate.bedroom_bedroom_ac
-  show_current_as_primary: true
-  features:
-    - type: climate-fan-modes
-      style: dropdown
-    - type: climate-hvac-modes
-  grid_options:
-    columns: 12
-    rows: 5
+# Thermostat cards archived to cards/scene-buttons/archive-buttons.yaml.
+# This file is no longer included in the dashboard.
+[]

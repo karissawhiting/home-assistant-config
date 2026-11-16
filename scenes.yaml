@@ -184,18 +184,30 @@
       - 128
       - 0
       - 128
-    light.table_lamp:
+    light.harp_lamp:
       state: 'on'
       rgb_color:
       - 0
       - 0
       - 255
+    light.all_shelf_lights:
+      state: 'on'
+      rgb_color:
+      - 255
+      - 69
+      - 0
+    light.octagon_lamp_socket:
+      state: 'off'
   metadata:
     light.standing_lamp:
       entity_only: true
     light.living_room_arc_lamp:
       entity_only: true
-    light.table_lamp:
+    light.harp_lamp:
+      entity_only: true
+    light.all_shelf_lights:
+      entity_only: true
+    light.octagon_lamp_socket:
       entity_only: true
 - id: '1794780114880'
   name: Evening
@@ -274,7 +286,7 @@
       friendly_name: Arc Lamp
       supported_features: 40
       state: 'on'
-    light.table_lamp:
+    light.harp_lamp:
       min_color_temp_kelvin: 2202
       max_color_temp_kelvin: 7042
       supported_color_modes:
@@ -295,7 +307,7 @@
       - 0.388
       off_with_transition: false
       off_brightness:
-      friendly_name: Table Lamp
+      friendly_name: Harp Lamp
       supported_features: 40
       state: 'on'
   metadata:
@@ -305,7 +317,7 @@
       entity_only: true
     light.living_room_arc_lamp:
       entity_only: true
-    light.table_lamp:
+    light.harp_lamp:
       entity_only: true
   icon: mdi:lamp
 - id: '1794784041722'
@@ -378,7 +390,7 @@
       friendly_name: Arc Lamp
       supported_features: 40
       state: 'on'
-    light.table_lamp:
+    light.harp_lamp:
       min_color_temp_kelvin: 2202
       max_color_temp_kelvin: 7042
       supported_color_modes:
@@ -399,7 +411,7 @@
       - 0.388
       off_with_transition: false
       off_brightness:
-      friendly_name: Table Lamp
+      friendly_name: Harp Lamp
       supported_features: 40
       state: 'on'
     light.desk_lamp_socket:
@@ -423,7 +435,7 @@
       entity_only: true
     light.living_room_arc_lamp:
       entity_only: true
-    light.table_lamp:
+    light.harp_lamp:
       entity_only: true
     light.desk_lamp_socket:
       entity_only: true
@@ -493,7 +505,7 @@
       friendly_name: Arc Lamp
       supported_features: 40
       state: 'off'
-    light.table_lamp:
+    light.harp_lamp:
       min_color_temp_kelvin: 2202
       max_color_temp_kelvin: 7042
       supported_color_modes:
@@ -514,7 +526,7 @@
       - 0.185
       off_with_transition: false
       off_brightness:
-      friendly_name: Table Lamp
+      friendly_name: Harp Lamp
       supported_features: 40
       state: 'on'
     light.desk_lamp_socket:
@@ -538,7 +550,7 @@
       entity_only: true
     light.living_room_arc_lamp:
       entity_only: true
-    light.table_lamp:
+    light.harp_lamp:
       entity_only: true
     light.desk_lamp_socket:
       entity_only: true
@@ -622,7 +634,7 @@
       friendly_name: Arc Lamp
       supported_features: 40
       state: 'on'
-    light.table_lamp:
+    light.harp_lamp:
       min_color_temp_kelvin: 2202
       max_color_temp_kelvin: 7042
       supported_color_modes:
@@ -643,7 +655,7 @@
       - 0.388
       off_with_transition: false
       off_brightness:
-      friendly_name: Table Lamp
+      friendly_name: Harp Lamp
       supported_features: 40
       state: 'on'
     light.all_bedroom_lights:
@@ -703,7 +715,7 @@
       entity_only: true
     light.living_room_arc_lamp:
       entity_only: true
-    light.table_lamp:
+    light.harp_lamp:
       entity_only: true
     light.all_bedroom_lights:
       entity_only: true

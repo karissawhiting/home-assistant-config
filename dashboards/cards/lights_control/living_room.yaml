@@ -30,14 +30,17 @@
     rows: 5.5
   tap_action:
     action: toggle
+  hold_action:
+    action: more-info
   sub_button:
     main:
       - group:
           - entity: light.all_living_room_lights
             icon: mdi:power
-            name: Toggle
+            name: All On
             tap_action:
-              action: toggle
+              action: perform-action
+              perform_action: script.living_room_all_lights_on_warm
             hold_action:
               action: more-info
           - entity: script.living_room_set_active_lights_to_warm_white
@@ -236,7 +239,7 @@
         buttons_layout: inline
         justify_content: start
       - group:
-          - entity: light.table_lamp
+          - entity: light.harp_lamp
             icon: mdi:desk-lamp
             name: Toggle
             show_name: false
@@ -247,7 +250,7 @@
               action: toggle
             hold_action:
               action: more-info
-          - entity: light.table_lamp
+          - entity: light.harp_lamp
             sub_button_type: slider
             fill_width: true
             always_visible: true
@@ -260,9 +263,9 @@
             allow_light_slider_to_0: true
             hold_action:
               action: more-info
-            name: Table Lamp
+            name: Harp Lamp
             tap_to_slide: false
-          - entity: light.table_lamp
+          - entity: light.harp_lamp
             icon: mdi:palette
             fill_width: false
             show_background: true

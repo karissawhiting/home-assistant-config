@@ -55,3 +55,88 @@ kitchen_set_active_lights_to_warm_white:
       color_temp_kelvin: 2202
   mode: single
   icon: mdi:weather-sunny
+living_room_nightlight:
+  alias: Living Room - Nightlight
+  description: Turns off every living room light except the harp lamp and turns the
+    harp lamp on as a nightlight. If the harp lamp is already the only light on,
+    it turns it off instead.
+  variables:
+    others: "{{ expand('light.all_living_room_lights') | map(attribute='entity_id')
+      | reject('eq', 'light.harp_lamp') | list }}"
+    others_on: "{{ expand(others) | selectattr('state', 'eq', 'on') | list | count
+      > 0 }}"
+  sequence:
+  - if: "{{ is_state('light.harp_lamp', 'on') and not others_on }}"
+    then:
+    - action: light.turn_off
+      target:
+        entity_id: light.harp_lamp
+    else:
+    - action: light.turn_off
+      target:
+        entity_id: "{{ others }}"
+    - action: light.turn_on
+      target:
+        entity_id: light.harp_lamp
+      data:
+        color_temp_kelvin: 2202
+  mode: single
+  icon: mdi:lightbulb-night-outline
+living_room_all_lights_on_warm:
+  alias: Living Room - All Lights On (Warm, Full)
+  description: Turns on every living room light at 100% brightness in warm white
+    (2202K; shelf lights get 2000K), matching the warm white script.
+  variables:
+    shelf_lights:
+    - light.top_shelf_light
+    - light.living_room_bottom_shelf_lights_lamp
+    - light.lower_shelf_light
+    all_lights: "{{ expand('light.all_living_room_lights') | map(attribute='entity_id')
+      | list }}"
+    shelf: "{{ all_lights | select('in', shelf_lights) | list }}"
+    other: "{{ all_lights | reject('in', shelf_lights) | list }}"
+  sequence:
+  - action: light.turn_on
+    target:
+      entity_id: "{{ other }}"
+    data:
+      color_temp_kelvin: 2202
+      brightness_pct: 100
+  - if: "{{ shelf | count > 0 }}"
+    then:
+    - action: light.turn_on
+      target:
+        entity_id: "{{ shelf }}"
+      data:
+        color_temp_kelvin: 2000
+        brightness_pct: 100
+  mode: single
+  icon: mdi:power
+bedroom_all_lights_on_warm:
+  alias: Bedroom - All Lights On (Warm, Full)
+  description: Turns on every bedroom light at 100% brightness in warm white (2202K),
+    matching the warm white script.
+  sequence:
+  - action: light.turn_on
+    target:
+      entity_id: "{{ expand('light.all_bedroom_lights') | map(attribute='entity_id')
+        | list }}"
+    data:
+      color_temp_kelvin: 2202
+      brightness_pct: 100
+  mode: single
+  icon: mdi:power
+kitchen_all_lights_on_warm:
+  alias: Kitchen - All Lights On (Warm, Full)
+  description: Turns on every kitchen light at 100% brightness in warm white (2202K),
+    matching the warm white script.
+  sequence:
+  - action: light.turn_on
+    target:
+      entity_id: "{{ expand('light.all_kitchen_lights') | map(attribute='entity_id')
+        | list }}"
+    data:
+      color_temp_kelvin: 2202
+      brightness_pct: 100
+  mode: single
+  icon: mdi:power
