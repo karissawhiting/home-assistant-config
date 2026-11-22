@@ -28,8 +28,10 @@
   grid_options:
     columns: full
     rows: 3
+  # Main icon tap: lights off if any are on, otherwise warm (2202K) at ~62%
   tap_action:
-    action: toggle
+    action: perform-action
+    perform_action: script.bedroom_warm_toggle
   hold_action:
     action: more-info
   sub_button:

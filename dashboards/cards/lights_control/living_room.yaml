@@ -28,8 +28,10 @@
   grid_options:
     columns: full
     rows: 5.5
+  # Main icon tap: lights off if any are on, otherwise the Living Room High scene
   tap_action:
-    action: toggle
+    action: perform-action
+    perform_action: script.living_room_high_toggle
   hold_action:
     action: more-info
   sub_button:

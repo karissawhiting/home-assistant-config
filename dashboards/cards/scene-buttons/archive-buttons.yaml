@@ -87,7 +87,7 @@
 
 # Climate tab thermostats (archived 2026-11-15) ---------------------------
 - type: thermostat
-  entity: climate.windmill_ac_2
+  entity: climate.living_room_windmill_ac
   features:
     - type: climate-fan-modes
       style: dropdown

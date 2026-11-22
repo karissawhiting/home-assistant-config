@@ -6,7 +6,6 @@ living_room_set_active_lights_to_warm_white:
   variables:
     shelf_lights:
     - light.top_shelf_light
-    - light.living_room_bottom_shelf_lights_lamp
     - light.lower_shelf_light
     active: "{{ expand('light.all_living_room_lights') | selectattr('state', 'eq',
       'on') | map(attribute='entity_id') | list }}"
@@ -83,60 +82,142 @@ living_room_nightlight:
   mode: single
   icon: mdi:lightbulb-night-outline
 living_room_all_lights_on_warm:
-  alias: Living Room - All Lights On (Warm, Full)
-  description: Turns on every living room light at 100% brightness in warm white
-    (2202K; shelf lights get 2000K), matching the warm white script.
+  alias: Living Room - All Lights Toggle (On Warm, Full / Off)
+  description: If every living room light is already on at full brightness, turns
+    them all off. Otherwise turns on every living room light at 100% brightness in warm white (2202K; shelf lights
+    get 2000K), matching the warm white script.
   variables:
     shelf_lights:
     - light.top_shelf_light
-    - light.living_room_bottom_shelf_lights_lamp
     - light.lower_shelf_light
     all_lights: "{{ expand('light.all_living_room_lights') | map(attribute='entity_id')
       | list }}"
     shelf: "{{ all_lights | select('in', shelf_lights) | list }}"
     other: "{{ all_lights | reject('in', shelf_lights) | list }}"
   sequence:
-  - action: light.turn_on
-    target:
-      entity_id: "{{ other }}"
-    data:
-      color_temp_kelvin: 2202
-      brightness_pct: 100
-  - if: "{{ shelf | count > 0 }}"
+  - if:
+    - condition: template
+      value_template: >-
+        {% set live = all_lights | reject('is_state', ['unavailable', 'unknown']) | list %}
+        {{ live | count > 0
+           and live | reject('is_state', 'on') | list | count == 0
+           and live | map('state_attr', 'brightness') | reject('none') | select('lt', 250) | list | count == 0 }}
     then:
+    - action: light.turn_off
+      target:
+        entity_id: "{{ all_lights }}"
+    else:
     - action: light.turn_on
       target:
-        entity_id: "{{ shelf }}"
+        entity_id: "{{ other }}"
       data:
-        color_temp_kelvin: 2000
+        color_temp_kelvin: 2202
         brightness_pct: 100
+    - if: "{{ shelf | count > 0 }}"
+      then:
+      - action: light.turn_on
+        target:
+          entity_id: "{{ shelf }}"
+        data:
+          color_temp_kelvin: 2000
+          brightness_pct: 100
   mode: single
   icon: mdi:power
 bedroom_all_lights_on_warm:
-  alias: Bedroom - All Lights On (Warm, Full)
-  description: Turns on every bedroom light at 100% brightness in warm white (2202K),
-    matching the warm white script.
+  alias: Bedroom - All Lights Toggle (On Warm, Full / Off)
+  description: If every bedroom light is already on at full brightness, turns them
+    all off. Otherwise turns on every bedroom light at 100% brightness in warm white (2202K).
+  variables:
+    all_lights: "{{ expand('light.all_bedroom_lights') | map(attribute='entity_id')
+      | list }}"
   sequence:
-  - action: light.turn_on
-    target:
-      entity_id: "{{ expand('light.all_bedroom_lights') | map(attribute='entity_id')
-        | list }}"
-    data:
-      color_temp_kelvin: 2202
-      brightness_pct: 100
+  - if:
+    - condition: template
+      value_template: >-
+        {% set live = all_lights | reject('is_state', ['unavailable', 'unknown']) | list %}
+        {{ live | count > 0
+           and live | reject('is_state', 'on') | list | count == 0
+           and live | map('state_attr', 'brightness') | reject('none') | select('lt', 250) | list | count == 0 }}
+    then:
+    - action: light.turn_off
+      target:
+        entity_id: "{{ all_lights }}"
+    else:
+    - action: light.turn_on
+      target:
+        entity_id: "{{ all_lights }}"
+      data:
+        color_temp_kelvin: 2202
+        brightness_pct: 100
   mode: single
   icon: mdi:power
 kitchen_all_lights_on_warm:
-  alias: Kitchen - All Lights On (Warm, Full)
-  description: Turns on every kitchen light at 100% brightness in warm white (2202K),
-    matching the warm white script.
+  alias: Kitchen - All Lights Toggle (On Warm, Full / Off)
+  description: If every kitchen light is already on at full brightness, turns them
+    all off. Otherwise turns on every kitchen light at 100% brightness in warm white (2202K).
+  variables:
+    all_lights: "{{ expand('light.all_kitchen_lights') | map(attribute='entity_id')
+      | list }}"
   sequence:
-  - action: light.turn_on
-    target:
-      entity_id: "{{ expand('light.all_kitchen_lights') | map(attribute='entity_id')
-        | list }}"
-    data:
-      color_temp_kelvin: 2202
-      brightness_pct: 100
+  - if:
+    - condition: template
+      value_template: >-
+        {% set live = all_lights | reject('is_state', ['unavailable', 'unknown']) | list %}
+        {{ live | count > 0
+           and live | reject('is_state', 'on') | list | count == 0
+           and live | map('state_attr', 'brightness') | reject('none') | select('lt', 250) | list | count == 0 }}
+    then:
+    - action: light.turn_off
+      target:
+        entity_id: "{{ all_lights }}"
+    else:
+    - action: light.turn_on
+      target:
+        entity_id: "{{ all_lights }}"
+      data:
+        color_temp_kelvin: 2202
+        brightness_pct: 100
   mode: single
   icon: mdi:power
+living_room_high_toggle:
+  alias: Living Room - High Scene Toggle
+  description: If any living room light is on, turns them all off. Otherwise activates
+    the Living Room High scene. Used by the Living Room card's main icon.
+  sequence:
+  - if:
+    - condition: state
+      entity_id: light.all_living_room_lights
+      state: 'on'
+    then:
+    - action: light.turn_off
+      target:
+        entity_id: light.all_living_room_lights
+    else:
+    - action: scene.turn_on
+      target:
+        entity_id: scene.living_room_high
+  mode: single
+  icon: mdi:sofa-outline
+bedroom_warm_toggle:
+  alias: Bedroom - Warm Lights Toggle
+  description: If any bedroom light is on, turns them all off. Otherwise turns the
+    bedroom lights on warm (2202K) at ~62% brightness. Used by the Bedroom card's
+    main icon.
+  sequence:
+  - if:
+    - condition: state
+      entity_id: light.all_bedroom_lights
+      state: 'on'
+    then:
+    - action: light.turn_off
+      target:
+        entity_id: light.all_bedroom_lights
+    else:
+    - action: light.turn_on
+      target:
+        entity_id: light.all_bedroom_lights
+      data:
+        color_temp_kelvin: 2202
+        brightness: 157
+  mode: single
+  icon: mdi:bed-outline

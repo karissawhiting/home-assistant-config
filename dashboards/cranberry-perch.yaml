@@ -8,6 +8,9 @@ views:
     badges: []
     sections:
       - type: grid
+        cards: !include cards/scene-buttons/scene-buttons.yaml
+        column_span: 1
+      - type: grid
         cards:
           - type: vertical-stack
             cards: !include cards/lights_control/living_room.yaml
@@ -27,9 +30,6 @@ views:
         background:
           opacity: 60
         theme: Google Dark Theme
-      - type: grid
-        cards: !include cards/scene-buttons/scene-buttons.yaml
-        column_span: 1
     header:
       card:
         type: markdown

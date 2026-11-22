@@ -62,21 +62,21 @@
         border-radius: 30px;
         border: 3px solid #7587e1;
       }
-# Evening scene ----------------------------------------------
+# Living Room Lights ------------------------------------
 - show_name: true
   show_icon: true
   type: button
-  entity: scene.living_room_evening
+  name: Living Room Lights
+  icon: mdi:lamp
   theme: Google Dark Theme
   show_state: false
   grid_options:
     columns: 6
     rows: 1
   tap_action:
-    action: toggle
+    action: navigate
+    navigation_path: "#living-room-lights"
   color: accent
-  icon: mdi:lamp
-  name: Evening
   card_mod:
     style: |-
       ha-card {
@@ -85,8 +85,59 @@
       }
 
       ha-state-icon {
-        color: {{ '#4b8b85' if is_state(config.entity, 'on') else '#4b8b85' }} !important;
+        color: #4b8b85 !important;
       }
+# Living Room Lights pop-up (hidden until the Living Room Lights button is tapped)
+- type: custom:bubble-card
+  card_type: pop-up
+  hash: "#living-room-lights"
+  close_on_click: true
+  popup_mode: centered
+  name: Living Room Lights
+  icon: mdi:lamp
+  cards:
+    - type: grid
+      columns: 2
+      square: false
+      cards:
+        # Low: Living Room Low scene
+        - show_name: true
+          show_icon: true
+          type: button
+          entity: scene.living_room_low
+          name: Low
+          icon: mdi:lamp
+          show_state: false
+          tap_action:
+            action: toggle
+          card_mod:
+            style: |-
+              ha-card {
+                border-radius: 30px;
+                border: 3px solid #7587e1;
+              }
+              ha-state-icon {
+                color: #4b8b85 !important;
+              }
+        # High: Living Room High scene
+        - show_name: true
+          show_icon: true
+          type: button
+          entity: scene.living_room_high
+          name: High
+          icon: mdi:lamps
+          show_state: false
+          tap_action:
+            action: toggle
+          card_mod:
+            style: |-
+              ha-card {
+                border-radius: 30px;
+                border: 3px solid #7587e1;
+              }
+              ha-state-icon {
+                color: #fff59d !important;
+              }
 # All Kitchen Lights ----------------------------------------------
 - show_name: true
   show_icon: true
@@ -195,12 +246,29 @@
       columns: 2
       square: false
       cards:
-        # Less light: Half Cinema scene
+        # Low: Cinema scene
+        - show_name: true
+          show_icon: true
+          type: button
+          entity: scene.living_room_cinema
+          name: Low
+          icon: mdi:brightness-3
+          show_state: false
+          tap_action:
+            action: toggle
+          color: indigo
+          card_mod:
+            style: |-
+              ha-card {
+                border-radius: 30px;
+                border: 3px solid #7587e1;
+              }
+        # High: Half Cinema scene
         - show_name: true
           show_icon: true
           type: button
           entity: scene.living_room_half_cinema
-          name: Less light
+          name: High
           icon: mdi:brightness-5
           show_state: false
           tap_action:
@@ -213,21 +281,4 @@
               }
               ha-state-icon {
                 color: #fff59d !important;
-              }
-        # Least light: Cinema scene
-        - show_name: true
-          show_icon: true
-          type: button
-          entity: scene.living_room_cinema
-          name: Least light
-          icon: mdi:brightness-3
-          show_state: false
-          tap_action:
-            action: toggle
-          color: indigo
-          card_mod:
-            style: |-
-              ha-card {
-                border-radius: 30px;
-                border: 3px solid #7587e1;
               }
