@@ -709,21 +709,20 @@
       - color_temp
       - xy
       color_mode: color_temp
-      brightness: 168
-      color_temp_kelvin: 2155
+      brightness: 71
+      color_temp_kelvin: 2000
       hs_color:
-      - 29.962
-      - 86.72
+      - 30.601
+      - 94.547
       rgb_color:
       - 255
-      - 144
-      - 34
+      - 137
+      - 14
       xy_color:
-      - 0.583
-      - 0.387
+      - 0.598
+      - 0.383
       entity_id:
       - light.top_shelf_light
-      - light.living_room_bottom_shelf_lights_lamp
       - light.lower_shelf_light
       friendly_name: All Shelf Lights
       supported_features: 40
@@ -735,18 +734,18 @@
       - color_temp
       - xy
       color_mode: color_temp
-      brightness: 125
-      color_temp_kelvin: 2155
+      brightness: 153
+      color_temp_kelvin: 2202
       hs_color:
-      - 29.962
-      - 86.72
+      - 29.79
+      - 84.553
       rgb_color:
       - 255
-      - 144
-      - 34
+      - 146
+      - 39
       xy_color:
-      - 0.583
-      - 0.387
+      - 0.579
+      - 0.388
       off_with_transition: false
       off_brightness:
       friendly_name: Standing Lamp
@@ -759,18 +758,18 @@
       - color_temp
       - xy
       color_mode: color_temp
-      brightness: 69
-      color_temp_kelvin: 2155
+      brightness: 150
+      color_temp_kelvin: 2202
       hs_color:
-      - 29.962
-      - 86.72
+      - 29.79
+      - 84.553
       rgb_color:
       - 255
-      - 144
-      - 34
+      - 146
+      - 39
       xy_color:
-      - 0.583
-      - 0.387
+      - 0.579
+      - 0.388
       off_with_transition: false
       off_brightness:
       friendly_name: Arc Lamp
@@ -783,18 +782,18 @@
       - color_temp
       - xy
       color_mode: color_temp
-      brightness: 153
-      color_temp_kelvin: 2155
+      brightness: 89
+      color_temp_kelvin: 2202
       hs_color:
-      - 29.962
-      - 86.72
+      - 29.79
+      - 84.553
       rgb_color:
       - 255
-      - 144
-      - 34
+      - 146
+      - 39
       xy_color:
-      - 0.583
-      - 0.387
+      - 0.579
+      - 0.388
       off_with_transition: false
       off_brightness:
       friendly_name: Harp Lamp
